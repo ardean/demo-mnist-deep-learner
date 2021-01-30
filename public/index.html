@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MNIST Digit Recognition</title>
+  <style>
+    body {
+      margin: 50px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .canvas-container {
+      margin-bottom: 20px;
+    }
+
+    canvas {
+      border: 1px solid #ddd;
+    }
+
+    #resized-canvas {
+      display: none;
+    }
+
+    #loading {
+      font-size: 72px;
+      color: #5dc18d;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      background-color: #fafafaaa;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+
+    button {
+      background-color: #5dc18d;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      padding: 10px 30px;
+      margin: 2px 8px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button.red {
+      background-color: #c15d8d;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas-container">
+    <canvas id="drawing-canvas" width="280" height="280"></canvas>
+  </div>
+  <div id="loading"></div>
+  <button onclick="predict()">Predict</button>
+  <button onclick="reset()">Clear</button>
+  <button class="red" onclick="train()">Train</button>
+  <button class="red" onclick="test()">Test</button>
+  <canvas id="resized-canvas" width="28" height="28"></canvas>
+
+  <script src="./jsketch/sketchable.full.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
